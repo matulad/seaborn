@@ -35,6 +35,7 @@ from seaborn._marks.dot import Dot, Dots  # noqa: F401
 from seaborn._marks.line import Dash, Line, Lines, Path, Paths, Range  # noqa: F401
 from seaborn._marks.text import Text  # noqa: F401
 from seaborn._marks.linelabel import LineLabel
+from seaborn._marks.abline import Axline, Axhline
 
 from seaborn._stats.base import Stat  # noqa: F401
 from seaborn._stats.aggregation import Agg, Est  # noqa: F401

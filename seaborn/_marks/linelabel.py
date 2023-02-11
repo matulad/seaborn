@@ -2,16 +2,13 @@
 ## Link: https://github.com/mwaskom/seaborn/discussions/3133
 
 import dataclasses
-import operator
 import collections
-from typing import ClassVar, Any, Mapping
+from typing import Any, Mapping
 
 import matplotlib as mpl
-import pandas as pd
 import scipy.optimize
 import seaborn.objects as so
 import numpy as np
-from seaborn._core.groupby import GroupBy
 from seaborn._marks.base import (
     Mappable,
     MappableColor,
@@ -73,9 +70,6 @@ class LineLabel(so.Mark):
             # Recover points
             sol = np.cumsum(sol) + min_point + np.arange(num_points) * sorted_offsets.squeeze(1)
             sol = np.take_along_axis(sol[:, np.newaxis], original_indexes, axis=0)
-            # logging.info(
-            #     "Found line label positions with final objective value: %f", objective_value
-            # )
 
             # Update original points
             points[other] = sol
