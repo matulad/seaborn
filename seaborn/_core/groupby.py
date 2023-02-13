@@ -87,6 +87,10 @@ class GroupBy:
         """
         grouper, groups = self._get_groups(data)
 
+        # TODO: get rid of variables used in args/kwargs 
+        #       If i pick a variable to get its aggregate,
+        #       I wouldn't like it to be in groupping vars.
+
         if not grouper:
             res = data.agg(*args, **kwargs)
             if isinstance(res, pd.Series):

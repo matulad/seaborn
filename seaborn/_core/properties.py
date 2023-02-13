@@ -331,6 +331,19 @@ class FontSize(IntervalProperty):
         return base * .5, base * 2
 
 
+class Intercept(IntervalProperty):
+    """Line defining parameter """
+    _default_range = -np.inf, np.inf
+    _legend = False
+
+
+class Slope(IntervalProperty):
+    """Steepness of a line."""
+    _default_range = -np.inf, np.inf
+    _legend = False
+
+
+
 # =================================================================================== #
 # Properties defined by arbitrary objects with inherently nominal scaling
 # =================================================================================== #
@@ -832,6 +845,8 @@ PROPERTY_CLASSES = {
     "ymin": Coordinate,
     "ymax": Coordinate,
     "group": Property,
+    "intercept": Property,
+    "slope": Property,
     # TODO pattern?
     # TODO gradient?
 }
