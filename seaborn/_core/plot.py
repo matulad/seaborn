@@ -538,6 +538,9 @@ class Plot:
             msg = f"mark must be a Mark instance, not {type(mark)!r}."
             raise TypeError(msg)
 
+        zorder = len(self._layers) + 1
+        mark.artist_kws["zorder"] = mark.artist_kws.get("zorder", zorder)
+
         # TODO This API for transforms was a late decision, and previously Plot.add
         # accepted 0 or 1 Stat instances and 0, 1, or a list of Move instances.
         # It will take some work to refactor the internals so that Stat and Move are
